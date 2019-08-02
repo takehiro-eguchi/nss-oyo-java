@@ -6,6 +6,8 @@ import lombok.Data;
 
 public class LombokSample {
 
+//	@ToString
+//	@EqualsAndHashCode
 	@Data
 	@Builder
 	public static class Art {
@@ -14,19 +16,19 @@ public class LombokSample {
 		private String author;
 		private int state;
 		public void close() {
-			System.out.println("close!!");
+			System.out.println("Close!!");
 		}
 	}
 
 	public static void main(String[] args) {
-//		@Cleanup Art art = new Art();
+//		Art art = new Art();
 //		art.setId(0);
 //		art.setTitle("Guernica");
 //		art.setAuthor("Picasso");
 //		art.setState(1);
+//		System.out.println(art);
 		@Cleanup Art art = Art.builder()
-				.id(0).title("Guernica").author("Picasso").state(1)
-				.build();
-		System.out.println(art);
+			.id(0).title("Guernica").author("Picasso").state(1)
+			.build();
 	}
 }
