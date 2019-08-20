@@ -12,7 +12,7 @@ public class Main {
 	private static ChartDataController chartDataController;
 
 	public static void main(String[] args) {
-		IChartDataReader chartDataReader = new ChartDataFileReader("sample.txt");
+		IChartDataReader chartDataReader = new ChartDataFileReader("resources/char.csv");
 		IChartDataDrawer chartDataDrawer = new ChartDataDrawer("result.txt");
 		chartDataController = new ChartDataController(chartDataReader, chartDataDrawer);
 		try {
